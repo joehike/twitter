@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<% locals.stylesheets.forEach(function(stylesheet){%>
+	<% 		include ./partials/stylesheet %>
+	<% })%>
+	<title><%= locals.title %></title>
+</head>
+<body>
+	<h1><%= locals.header %></h1>
+	<form action="/send" method="POST">
+		<input type="text" length="140" name="tweet"/>
+		<input type="submit" value="发送推特">
+	</form>
+	<hr>
+	<% locals.tweets.forEach(function(tweet){%>
+	<% 		include ./partials/tweet %>
+	<% })%>
+</body>
+</html>
+
+
